@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sprint 1 Hub — SubVault</title>
+  <meta name="description" content="Sprint 1 hub: goals, timeline, and access to market research, strategy, and charter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark" aria-hidden="true">SV</span>
+        SubVault
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About Us</a>
+        <div class="nav-dropdown is-active" data-nav="sprint1">
+          <button type="button" class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            Sprint 1
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown__menu" role="menu">
+            <a href="index.html" role="menuitem" aria-current="page">Sprint 1 Hub</a>
+            <a href="market-research.html" role="menuitem">Market Research</a>
+            <a href="business-strategy.html" role="menuitem">Business Strategy</a>
+            <a href="project-charter.html" role="menuitem">Project Charter</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <header class="page-header">
+      <p class="page-kicker">Sprint archive</p>
+      <h1 class="page-title">Sprint 1 Hub</h1>
+      <p class="page-intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sprint 1 establishes market discovery,
+        strategic justification, and formal project authorization for SubVault.
+      </p>
+      <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+        <span class="status-pill">Sprint 1 Active</span>
+        <span class="tag">Discovery</span>
+        <span class="tag">Strategy</span>
+        <span class="tag">Governance</span>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="goals-title">
+      <div class="section__header">
+        <h2 class="section__title" id="goals-title">Sprint goals</h2>
+      </div>
+      <div class="glass content-block">
+        <ol>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit — complete market research synthesis.</li>
+          <li>Sed do eiusmod tempor incididunt ut labore — define the strategy-to-project chain.</li>
+          <li>Ut enim ad minim veniam, quis nostrud — publish an approved project charter baseline.</li>
+          <li>Duis aute irure dolor in reprehenderit — document pivots and abandoned opportunity spaces.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="timeline-title">
+      <div class="section__header">
+        <h2 class="section__title" id="timeline-title">Timeline</h2>
+        <p class="section__desc">Placeholder dates — replace with your sprint calendar.</p>
+      </div>
+      <div class="glass content-block">
+        <div class="timeline">
+          <div class="timeline__item">
+            <p class="timeline__date">Week 1</p>
+            <p class="timeline__title">Kickoff &amp; problem framing</p>
+            <p class="timeline__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+          </div>
+          <div class="timeline__item">
+            <p class="timeline__date">Week 2</p>
+            <p class="timeline__title">Market research &amp; competitive scan</p>
+            <p class="timeline__body">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="timeline__item">
+            <p class="timeline__date">Week 3</p>
+            <p class="timeline__title">Strategy chain &amp; justification</p>
+            <p class="timeline__body">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          </div>
+          <div class="timeline__item">
+            <p class="timeline__date">Week 4</p>
+            <p class="timeline__title">Charter freeze &amp; stakeholder alignment</p>
+            <p class="timeline__body">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="deliverables-title">
+      <div class="section__header">
+        <h2 class="section__title" id="deliverables-title">Deliverable pages</h2>
+        <p class="section__desc">Quick access to Sprint 1 workstreams.</p>
+      </div>
+      <div class="bento">
+        <a class="glass card card--interactive card--link bento__item" href="market-research.html" style="grid-column: span 4;">
+          <p class="card__label">01</p>
+          <h3 class="card__title">Market Research</h3>
+          <p class="card__body">Aggregate findings, top-pick deep dive, and pivots we abandoned.</p>
+          <p class="card__meta">Owned by Anali &amp; Megan</p>
+        </a>
+        <a class="glass card card--interactive card--link bento__item" href="business-strategy.html" style="grid-column: span 4;">
+          <p class="card__label">02</p>
+          <h3 class="card__title">Business Strategy</h3>
+          <p class="card__body">Organizational strategy → objective → justification → scope boundary.</p>
+          <p class="card__meta">Owned by Leo</p>
+        </a>
+        <a class="glass card card--interactive card--link bento__item" href="project-charter.html" style="grid-column: span 4;">
+          <p class="card__label">03</p>
+          <h3 class="card__title">Project Charter</h3>
+          <p class="card__body">Scope, assumptions, constraints, success criteria, and stakeholders.</p>
+          <p class="card__meta">Owned by Frank</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>SubVault · Sprint 1</span>
+      <a href="../index.html">Back to Home</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

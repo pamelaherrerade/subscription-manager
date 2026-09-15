@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SubVault — The Living Project Portal</title>
+  <meta name="description" content="SubVault Living Project Portal for CS 4390/5388 — subscription lifecycle management." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-current="page">
+        <span class="brand__mark" aria-hidden="true">SV</span>
+        SubVault
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="about.html">About Us</a>
+        <div class="nav-dropdown" data-nav="sprint1">
+          <button type="button" class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            Sprint 1
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown__menu" role="menu">
+            <a href="sprint1/index.html" role="menuitem">Sprint 1 Hub</a>
+            <a href="sprint1/market-research.html" role="menuitem">Market Research</a>
+            <a href="sprint1/business-strategy.html" role="menuitem">Business Strategy</a>
+            <a href="sprint1/project-charter.html" role="menuitem">Project Charter</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <p class="hero__eyebrow">CS 4390 / 5388 · Living Project Portal</p>
+      <h1 class="hero__title" id="hero-title">
+        <span>SubVault</span>
+      </h1>
+      <p class="hero__lede">
+        Eliminating subscription churn and hidden recurring fees through proactive lifecycle management.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="sprint1/index.html">Enter Sprint 1</a>
+        <a class="btn btn--ghost" href="about.html">Meet the team</a>
+      </div>
+    </section>
+
+    <section class="container section" aria-labelledby="metrics-title">
+      <div class="section__header">
+        <div>
+          <h2 class="section__title" id="metrics-title">Project pulse</h2>
+          <p class="section__desc">Live snapshot of status, sprint focus, and quick paths into deliverables.</p>
+        </div>
+      </div>
+
+      <div class="bento">
+        <article class="glass bento__item bento__item--tall card--accent">
+          <p class="card__label">Project status</p>
+          <p class="metric__value metric__value--accent">On track</p>
+          <p class="metric__hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+          <span class="status-pill" style="margin-top: 1rem;">Active development</span>
+        </article>
+
+        <article class="glass bento__item bento__item--tall">
+          <p class="card__label">Current sprint</p>
+          <p class="metric__value">Sprint 1</p>
+          <p class="metric__hint">Market discovery, strategy chain, and project charter foundation.</p>
+          <span class="status-pill" style="margin-top: 1rem;">Sprint 1 Active</span>
+        </article>
+
+        <article class="glass bento__item bento__item--tall">
+          <p class="card__label">Course</p>
+          <p class="metric__value" style="font-size: 1.35rem;">CS 4390 / 5388</p>
+          <p class="metric__hint">Software Project Management · Semester Living Portal</p>
+        </article>
+
+        <article class="glass bento__item bento__item--wide">
+          <p class="card__label">Key links</p>
+          <h3 class="card__title">Jump into deliverables</h3>
+          <p class="card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <div class="quick-links">
+            <a class="chip" href="sprint1/market-research.html">Market Research</a>
+            <a class="chip" href="sprint1/business-strategy.html">Business Strategy</a>
+            <a class="chip" href="sprint1/project-charter.html">Project Charter</a>
+            <a class="chip" href="about.html">Team roster</a>
+          </div>
+        </article>
+
+        <article class="glass bento__item">
+          <p class="card__label">Product</p>
+          <h3 class="card__title">Subscription Manager</h3>
+          <p class="card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis.</p>
+          <p class="card__meta">Customer-facing app · lifecycle focus</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>SubVault · The Living Project Portal</span>
+      <span>CS 4390 / 5388 · Fall Semester</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

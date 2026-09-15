@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Strategy — SubVault Sprint 1</title>
+  <meta name="description" content="Strategy-to-project chain: organizational strategy, objective, justification, and scope." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark" aria-hidden="true">SV</span>
+        SubVault
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About Us</a>
+        <div class="nav-dropdown is-active" data-nav="sprint1">
+          <button type="button" class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+            Sprint 1
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown__menu" role="menu">
+            <a href="index.html" role="menuitem">Sprint 1 Hub</a>
+            <a href="market-research.html" role="menuitem">Market Research</a>
+            <a href="business-strategy.html" role="menuitem" aria-current="page">Business Strategy</a>
+            <a href="project-charter.html" role="menuitem">Project Charter</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <header class="page-header">
+      <p class="page-kicker">Sprint 1 · Deliverable</p>
+      <h1 class="page-title">Business Strategy</h1>
+      <p class="page-intro">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Follow the strategy-to-project chain from
+        organizational intent down to an explicit in/out scope boundary.
+      </p>
+    </header>
+
+    <section class="section" aria-labelledby="chain-title">
+      <div class="section__header">
+        <h2 class="section__title" id="chain-title">Strategy-to-project chain</h2>
+      </div>
+
+      <div class="strategy-chain">
+        <!-- 1. Organizational Strategy -->
+        <article class="glass strategy-step" data-strategy-step>
+          <button type="button" class="sr-only" data-strategy-toggle aria-expanded="true">Toggle section</button>
+          <h3>Organizational Strategy</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Describe how SubVault aligns to the sponsoring organization’s strategic themes
+            (growth, retention, trust, operational efficiency, etc.).
+          </p>
+          <div class="strategy-step__meta">
+            <span class="tag tag--accent">Strategic theme</span>
+            <span class="tag">Replace with real narrative</span>
+          </div>
+        </article>
+
+        <!-- 2. Business Objective -->
+        <article class="glass strategy-step" data-strategy-step>
+          <h3>Business Objective</h3>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. State a specific, measurable target and a deadline.
+          </p>
+          <div class="glass scope-panel" style="margin-top: 1rem;">
+            <h4>Objective statement (placeholder)</h4>
+            <p style="font-size: var(--fs-sm); color: var(--text-muted);">
+              By <strong style="color: var(--accent);">[DEADLINE]</strong>, achieve
+              <strong style="color: var(--text);">[SPECIFIC TARGET]</strong> for
+              <strong style="color: var(--text);">[METRIC]</strong> among
+              <strong style="color: var(--text);">[CUSTOMER SEGMENT]</strong>.
+            </p>
+          </div>
+          <div class="strategy-step__meta">
+            <span class="tag">SMART target</span>
+            <span class="tag">Time-bound</span>
+          </div>
+        </article>
+
+        <!-- 3. Project Justification -->
+        <article class="glass strategy-step" data-strategy-step>
+          <h3>Project Justification</h3>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Cite evidence and data that show this project moves the needle on the business objective.
+          </p>
+          <ul style="list-style: disc; padding-left: 1.1rem; margin-top: 0.75rem;">
+            <li style="font-size: var(--fs-sm); color: var(--text-muted); margin-top: 0.35rem;">
+              Evidence A — Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </li>
+            <li style="font-size: var(--fs-sm); color: var(--text-muted); margin-top: 0.35rem;">
+              Evidence B — Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </li>
+            <li style="font-size: var(--fs-sm); color: var(--text-muted); margin-top: 0.35rem;">
+              Evidence C — Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+            </li>
+          </ul>
+          <div class="strategy-step__meta">
+            <span class="tag">Data-backed</span>
+            <span class="tag">Links to Market Research</span>
+          </div>
+        </article>
+
+        <!-- 4. Project Scope Boundary -->
+        <article class="glass strategy-step" data-strategy-step>
+          <h3>Project Scope Boundary</h3>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+            laborum. Explicitly separate what is in scope versus out of scope for this semester.
+          </p>
+          <div class="scope-grid">
+            <div class="scope-panel scope-panel--in">
+              <h4>In scope</h4>
+              <ul>
+                <li>Lorem ipsum dolor sit amet — core subscription inventory.</li>
+                <li>Consectetur adipiscing elit — renewal / spend visibility.</li>
+                <li>Sed do eiusmod tempor — cancellation guidance flows.</li>
+              </ul>
+            </div>
+            <div class="scope-panel scope-panel--out">
+              <h4>Out of scope</h4>
+              <ul>
+                <li>Ut enim ad minim — bank account aggregation (if deferred).</li>
+                <li>Quis nostrud — automated bill negotiation.</li>
+                <li>Duis aute irure — multi-tenant enterprise admin.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="glass content-block">
+        <h3>How this feeds the charter</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. The objective, justification, and scope
+          boundary above become inputs to the official
+          <a href="project-charter.html" style="color: var(--accent); text-decoration: underline;">Project Charter</a>
+          stakeholder alignment and success criteria.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>SubVault · Business Strategy</span>
+      <a href="index.html">Sprint 1 Hub</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
