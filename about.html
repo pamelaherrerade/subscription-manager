@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us — SubVault</title>
-  <meta name="description" content="Meet the SubVault team — roles, ownership, and bios for the Living Project Portal." />
+  <title>About Us — Team 2 · Subscription Manager</title>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("subease-portal-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,121 +26,119 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="index.html">
-        <span class="brand__mark" aria-hidden="true">SV</span>
-        SubVault
+        <span class="brand__mark" aria-hidden="true">SM</span>
+        <span class="brand__text">
+          <span class="brand__name">Team 2 · Subscription Manager</span>
+          <span class="pill">🟢 Sprint 1 Active</span>
+        </span>
       </a>
       <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="about.html" aria-current="page">About Us</a>
-        <div class="nav-dropdown" data-nav="sprint1">
-          <button type="button" class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
-            Sprint 1
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-          </button>
-          <div class="nav-dropdown__menu" role="menu">
-            <a href="sprint1/index.html" role="menuitem">Sprint 1 Hub</a>
-            <a href="sprint1/market-research.html" role="menuitem">Market Research</a>
-            <a href="sprint1/business-strategy.html" role="menuitem">Business Strategy</a>
-            <a href="sprint1/project-charter.html" role="menuitem">Project Charter</a>
-          </div>
-        </div>
+        <a href="about.html">About Us</a>
+        <a href="sprint1.html">Sprint 1</a>
       </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <span data-icon="sun" aria-hidden="true">☀️</span>
+          <span data-icon="moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <header class="page-header">
-      <p class="page-kicker">Team</p>
-      <h1 class="page-title">About Us</h1>
-      <p class="page-intro">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our roster maps ownership across architecture,
-        research, strategy, and governance for SubVault.
+  <main>
+    <section class="page-hero container">
+      <p class="section__eyebrow">Team 2</p>
+      <h1>About Us</h1>
+      <p>
+        Team 2 is building Subscription Manager. Each member owns a clear Sprint 1 deliverable, from portal architecture to research, strategy, and charter.
       </p>
-    </header>
+    </section>
 
-    <div class="team-grid">
-      <article class="glass team-card">
-        <div class="team-card__avatar" aria-hidden="true">PH</div>
-        <h2 class="team-card__name">Pamela Herrera</h2>
-        <p class="team-card__role">Site Architecture &amp; Lead</p>
-        <p class="team-card__owns">
-          <strong>Owns</strong>
-          Portal structure, design system, and integration of sprint deliverables.
-        </p>
-        <p class="team-card__bio">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-          dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-        </p>
-      </article>
+    <section class="section container" style="padding-top: 0.5rem;">
+      <div class="team-grid">
+        <article class="card team-card">
+          <div class="team-card__header">
+            <div class="avatar avatar--1" aria-hidden="true">P</div>
+            <div>
+              <h2 class="team-card__name">Pamela</h2>
+              <p class="team-card__role">Site Architecture</p>
+              <p class="team-card__owns">Owns · Living Project Portal structure, UI/UX system, and deployment pipeline</p>
+            </div>
+          </div>
+          <p class="team-card__bio">
+            Designs and ships this portal—layout, design system, theme toggle, and navigation—so Sprint artifacts stay visible and deployable for the course.
+          </p>
+        </article>
 
-      <article class="glass team-card">
-        <div class="team-card__avatar" aria-hidden="true">AN</div>
-        <h2 class="team-card__name">Anali</h2>
-        <p class="team-card__role">Market Research &amp; Synthesis</p>
-        <p class="team-card__owns">
-          <strong>Owns</strong>
-          Aggregate findings across competitors, surveys, and synthesis narratives.
-        </p>
-        <p class="team-card__bio">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus
-          ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-        </p>
-      </article>
+        <article class="card team-card">
+          <div class="team-card__header">
+            <div class="avatar avatar--2" aria-hidden="true">M</div>
+            <div>
+              <h2 class="team-card__name">Anali</h2>
+              <p class="team-card__role">Market Research</p>
+              <p class="team-card__owns">Owns · Aggregate Findings synthesis across rejected candidates</p>
+            </div>
+          </div>
+          <p class="team-card__bio">
+            Conducted thrifting user interviews and owns the Aggregate Findings write-up covering Travel Guides, Document Checklists, Media Finder, and Thrifting—why those ideas did not advance.
+          </p>
+        </article>
 
-      <article class="glass team-card">
-        <div class="team-card__avatar" aria-hidden="true">ME</div>
-        <h2 class="team-card__name">Megan</h2>
-        <p class="team-card__role">Deep Dive &amp; Competitive Analysis</p>
-        <p class="team-card__owns">
-          <strong>Owns</strong>
-          Top-pick opportunity deep dive and competitive landscape evidence.
-        </p>
-        <p class="team-card__bio">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa.
-        </p>
-      </article>
+        <article class="card team-card">
+          <div class="team-card__header">
+            <div class="avatar avatar--3" aria-hidden="true">A</div>
+            <div>
+              <h2 class="team-card__name">Megan</h2>
+              <p class="team-card__role">Market Research</p>
+              <p class="team-card__owns">Owns · Top-Pick Deep Dive and pivots</p>
+            </div>
+          </div>
+          <p class="team-card__bio">
+            Conducted Travel Checklist interviews and owns the Top-Pick Deep Dive on Subscription Manager interview data, plus “What Didn’t Work / What We Pivoted From.”
+          </p>
+        </article>
 
-      <article class="glass team-card">
-        <div class="team-card__avatar" aria-hidden="true">LE</div>
-        <h2 class="team-card__name">Leo</h2>
-        <p class="team-card__role">Business Strategy &amp; Justification</p>
-        <p class="team-card__owns">
-          <strong>Owns</strong>
-          Strategy-to-project chain, objectives, and evidence-based justification.
-        </p>
-        <p class="team-card__bio">
-          Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam. Nisi ut
-          aliquid ex ea commodi consequatur. Quis autem vel eum iure.
-        </p>
-      </article>
+        <article class="card team-card">
+          <div class="team-card__header">
+            <div class="avatar avatar--4" aria-hidden="true">L</div>
+            <div>
+              <h2 class="team-card__name">Leo</h2>
+              <p class="team-card__role">Business Strategy</p>
+              <p class="team-card__owns">Owns · Business Strategy (strategy-to-project chain)</p>
+            </div>
+          </div>
+          <p class="team-card__bio">
+            Conducted user interviews and owns Business Strategy—including the strategy-to-project chain, target audience, and investor rationale for Subscription Manager.
+          </p>
+        </article>
 
-      <article class="glass team-card">
-        <div class="team-card__avatar" aria-hidden="true">FR</div>
-        <h2 class="team-card__name">Frank</h2>
-        <p class="team-card__role">Project Charter &amp; Governance</p>
-        <p class="team-card__owns">
-          <strong>Owns</strong>
-          Charter artifacts, scope boundaries, assumptions, and stakeholder register.
-        </p>
-        <p class="team-card__bio">
-          Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-          placeat facere possimus, omnis voluptas assumenda.
-        </p>
-      </article>
-    </div>
+        <article class="card team-card">
+          <div class="team-card__header">
+            <div class="avatar avatar--5" aria-hidden="true">F</div>
+            <div>
+              <h2 class="team-card__name">Frank</h2>
+              <p class="team-card__role">Project Charter</p>
+              <p class="team-card__owns">Owns · Official Project Charter and scope boundaries</p>
+            </div>
+          </div>
+          <p class="team-card__bio">
+            Conducted Media Finder interviews and owns the official Project Charter—scope boundaries (in/out/deferred), constraints, risks, and assumptions.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <span>SubVault · The Living Project Portal</span>
-      <a href="index.html">Back to Home</a>
+      <span>Team 2 · Subscription Manager · CS 4390/5388 · Dr. Mejia</span>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Repository →</a>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>

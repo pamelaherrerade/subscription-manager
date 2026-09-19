@@ -3,8 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SubVault — The Living Project Portal</title>
-  <meta name="description" content="SubVault Living Project Portal for CS 4390/5388 — subscription lifecycle management." />
+  <title>Team 2 · Subscription Manager — Living Project Portal</title>
+  <meta name="description" content="Team 2 Living Project Portal for Subscription Manager (SubEase) — CS 4390/5388." />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("subease-portal-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -13,93 +26,87 @@
 <body>
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-current="page">
-        <span class="brand__mark" aria-hidden="true">SV</span>
-        SubVault
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">SM</span>
+        <span class="brand__text">
+          <span class="brand__name">Team 2 · Subscription Manager</span>
+          <span class="pill">🟢 Sprint 1 Active</span>
+        </span>
       </a>
       <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <div class="nav-dropdown" data-nav="sprint1">
-          <button type="button" class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
-            Sprint 1
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
-          </button>
-          <div class="nav-dropdown__menu" role="menu">
-            <a href="sprint1/index.html" role="menuitem">Sprint 1 Hub</a>
-            <a href="sprint1/market-research.html" role="menuitem">Market Research</a>
-            <a href="sprint1/business-strategy.html" role="menuitem">Business Strategy</a>
-            <a href="sprint1/project-charter.html" role="menuitem">Project Charter</a>
-          </div>
-        </div>
+        <a href="sprint1.html">Sprint 1</a>
       </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <span data-icon="sun" aria-hidden="true">☀️</span>
+          <span data-icon="moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="hero container" aria-labelledby="hero-title">
-      <p class="hero__eyebrow">CS 4390 / 5388 · Living Project Portal</p>
-      <h1 class="hero__title" id="hero-title">
-        <span>SubVault</span>
-      </h1>
+    <section class="hero container">
+      <p class="hero__eyebrow"></p>
+      <h1 class="hero__title">Team 2 — The Living Project Portal</h1>
       <p class="hero__lede">
-        Eliminating subscription churn and hidden recurring fees through proactive lifecycle management.
+        Consumers lose money on forgotten recurring subscriptions and quiet small charges that add up—because monthly fees feel too minor to notice until years of waste pile up.
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="sprint1/index.html">Enter Sprint 1</a>
-        <a class="btn btn--ghost" href="about.html">Meet the team</a>
+        <a class="btn btn--primary" href="sprint1.html">View Sprint 1 Deliverables →</a>
+        <a class="btn btn--ghost" href="about.html">About Us</a>
       </div>
     </section>
 
-    <section class="container section" aria-labelledby="metrics-title">
-      <div class="section__header">
-        <div>
-          <h2 class="section__title" id="metrics-title">Project pulse</h2>
-          <p class="section__desc">Live snapshot of status, sprint focus, and quick paths into deliverables.</p>
-        </div>
-      </div>
+    <section class="section container" aria-labelledby="dash-title">
 
-      <div class="bento">
-        <article class="glass bento__item bento__item--tall card--accent">
-          <p class="card__label">Project status</p>
-          <p class="metric__value metric__value--accent">On track</p>
-          <p class="metric__hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-          <span class="status-pill" style="margin-top: 1rem;">Active development</span>
-        </article>
-
-        <article class="glass bento__item bento__item--tall">
-          <p class="card__label">Current sprint</p>
-          <p class="metric__value">Sprint 1</p>
-          <p class="metric__hint">Market discovery, strategy chain, and project charter foundation.</p>
-          <span class="status-pill" style="margin-top: 1rem;">Sprint 1 Active</span>
-        </article>
-
-        <article class="glass bento__item bento__item--tall">
-          <p class="card__label">Course</p>
-          <p class="metric__value" style="font-size: 1.35rem;">CS 4390 / 5388</p>
-          <p class="metric__hint">Software Project Management · Semester Living Portal</p>
-        </article>
-
-        <article class="glass bento__item bento__item--wide">
-          <p class="card__label">Key links</p>
-          <h3 class="card__title">Jump into deliverables</h3>
-          <p class="card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <div class="quick-links">
-            <a class="chip" href="sprint1/market-research.html">Market Research</a>
-            <a class="chip" href="sprint1/business-strategy.html">Business Strategy</a>
-            <a class="chip" href="sprint1/project-charter.html">Project Charter</a>
-            <a class="chip" href="about.html">Team roster</a>
+        <article class="card">
+          <p class="card__label">Sprint status</p>
+          <h3 class="card__title">Sprint 1 — Market Research, Strategy &amp; Charter</h3>
+          <div class="status-list">
+            <div class="status-row">
+              <span>Status</span>
+              <span class="pill">🟢 In Progress</span>
+            </div>
+            <div class="status-row">
+              <span>Deadline</span>
+              <strong>Sept 21, 11:59 PM</strong>
+            </div>
+            <div class="status-row">
+              <span>Instructor</span>
+              <strong>Dr. Mejia</strong>
+            </div>
           </div>
+          <a class="btn btn--primary btn--sm" href="sprint1.html">View Sprint 1 Deliverables →</a>
         </article>
+      </div>
+    </section>
 
-        <article class="glass bento__item">
-          <p class="card__label">Product</p>
-          <h3 class="card__title">Subscription Manager</h3>
-          <p class="card__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis.</p>
-          <p class="card__meta">Customer-facing app · lifecycle focus</p>
+    <section class="section container" style="padding-top: 0;" aria-labelledby="roadmap-title">
+      <p class="section__eyebrow">Roadmap</p>
+      <h2 class="section__title" id="roadmap-title">Sprint roadmap</h2>
+
+      <div class="roadmap--single">
+        <article class="card roadmap-card is-active roadmap-card--featured">
+          <div class="roadmap-card__top">
+            <span class="card__label" style="margin:0;">Current phase</span>
+            <span class="pill">🟢 Active</span>
+          </div>
+          <h3>Sprint 1</h3>
+          <p class="card__body">
+            Market Research, Business Strategy, and Project Charter are consolidated in the Sprint 1 deliverables PDF.
+          </p>
+          <div class="tags" style="margin-top:1rem;">
+            <span class="tag tag--lilac">Market Research</span>
+            <span class="tag tag--peach">Strategy</span>
+            <span class="tag tag--cyan">Charter</span>
+          </div>
+          <a class="btn btn--primary btn--sm" href="sprint1.html" style="margin-top:1.15rem;">Open Sprint 1 Document →</a>
         </article>
       </div>
     </section>
@@ -107,11 +114,10 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <span>SubVault · The Living Project Portal</span>
-      <span>CS 4390 / 5388 · Fall Semester</span>
+      <span>Team 2 · Subscription Manager · CS 4390/5388 · Dr. Mejia</span>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Repository →</a>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
