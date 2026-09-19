@@ -21,6 +21,88 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Estilos del sistema de pestañas y tipografía */
+    .tab-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border-color, #e5e7eb);
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      color: var(--text-muted, #6b7280);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background-color: var(--primary-bg, #000);
+      color: var(--primary-text, #fff);
+    }
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    .content-card {
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color, #e5e7eb);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      line-height: 1.5;
+    }
+    .content-card p {
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+    .content-card h2 {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .content-card h3 {
+      margin-top: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .content-card h4 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .content-card ul {
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .content-card li {
+      margin-bottom: 0.5rem;
+    }
+    .charter-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .charter-table th, .charter-table td {
+      border: 1px solid var(--border-color, #e5e7eb);
+      padding: 10px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .charter-table th {
+      background-color: var(--table-header-bg, #f9fafb);
+      width: 35%;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -59,35 +141,182 @@
     </section>
 
     <section class="section container" style="padding-top: 0;">
-      <div class="pdf-shell">
-        <div class="pdf-shell__bar">
-          <div class="btn-row">
-            <a class="btn btn--primary btn--sm" href="assets/docs/sprint1-deliverables.pdf" download>Download PDF</a>
-            <a class="btn btn--ghost btn--sm" href="assets/docs/sprint1-deliverables.pdf" target="_blank" rel="noopener noreferrer">Open in New Tab</a>
-          </div>
-          <span class="pill pill--muted">Consolidated Deliverables: Market Research, Strategy &amp; Charter</span>
-        </div>
-        <iframe
-          src="assets/docs/sprint1-deliverables.pdf"
-          width="100%"
-          height="850"
-          style="border: none; border-radius: 16px;"
-          title="Sprint 1 deliverables PDF"
-        ></iframe>
-        <p class="pdf-fallback">
-          If the PDF does not display directly in your browser,
-          <a href="assets/docs/sprint1-deliverables.pdf" target="_blank" rel="noopener noreferrer">click here to download or open it in a new window</a>.
-        </p>
+      <!-- Barra de navegación por pestañas -->
+      <div class="tab-nav">
+        <button type="button" class="tab-btn active" onclick="switchTab('web-view', this)">📖 Web View</button>
+        <button type="button" class="tab-btn" onclick="switchTab('pdf-view', this)">📄PDF</button>
       </div>
+
+      <!-- VISTA 1: TEXTO WEB IDÉNTICO AL PDF -->
+      <div id="web-view" class="tab-pane active">
+        
+        <!-- Market Research -->
+        <article class="content-card">
+          <h1>Sprint 1 Page</h1>
+          <h2>Market Research</h2>
+          
+          <h3>Aggregate Findings:</h3>
+
+          <h4>Travel Guides</h4>
+          <p>When subjects were interviewed to gauge whether an improved travel guide would be useful in today's market, many admitted to being spontaneous tourists who sought fun out of unplanned exploration and uncharted spots. All subjects preferred to break the norms of travel to ditch high tourist attractions. Although the likelihood of getting lost in these habits is high, more than half of Tolstoi's interviews turned out to not be interested in the potential product. Some people do need help navigating through their destination, but many applications already exist for that issue. Those who visit hidden or lesser-known spots on a whim would pay no mind to a guide given that their travel needs are to explore and discover new paths. Throughout the interviews, it had become evident that the Travel Guide idea would only be used by a small portion of travelers. Those who currently make no use of guides will likely not invest time or money in a guide within the future.</p>
+
+          <h4>Travel Documents Checklist</h4>
+          <p>Subjects interviewed for a potential Travel Documents Checklist project presented a unique dynamic of having a problem at hand but not feeling affected by it. Anali's subjects disclosed that having to use multiple sources for documentation information accounted for their pre-travel frustrations. For most flights, particularly those abroad, the requirements are often not all found on the airline's website. Many interviewees revealed Google, Reddit, YouTube, and government sites all being part of their preparation investigation. Despite the lengthy process of sifting through information, the subjects claimed that their travel experiences remained pleasant. Likewise, subjects who frequently traveled to the same location or domestically stated that they already knew what documents they needed to have ready and found no need for research. Given that travelers showed no issue behind researching before a flight, or some showed no need, a Travel Documents Checklist would be deemed unnecessary.</p>
+
+          <h4>Media Finder</h4>
+          <p>Frank conducted interviews to assess possible, frequent issues people may experience when trying to find media similar to what they already like. His findings proved that many of the interviewees shared the same lengthy process. Despite this, no real issue was documented. The subjects did admit that trying to find a similar song, game, or movie that aligned with their interests included having to make constant internet searches and refinements. Many even stated that Google often provided invalid recommendations. From all the conversations, there remained a lack of honing into a potential issue. No subject could verbally say that they would need or benefit from a solution.</p>
+
+          <h4>Thrifting</h4>
+          <p>Megan interviewed various subjects to evaluate whether a new thrifting application could solve the potential issue of not finding secondhand items at an affordable price. Many subjects revealed that their frustrations came from the price in relation to the quality of their desired item. A split collection of answers exists from Megans findings: on one side, people already have their means of finding affordable clothes with the help of reverse search and some patience; on the other side, people have no interest in selling their clothes as they only thrift.</p>
+
+          <p>Throughout the interview trials, our team found many bottlenecks with our individual ideas. However, one concept stood out to us from the rest...</p>
+
+          <h3>Top-pick/Deep Dive:</h3>
+          <p>Team 2 selected the Subscription Manager App as our strongest finding. Subscription Manager had the strongest evidence of a repeatable problem. In phase 1, we identified unexpected financial loss from forgotten recurring subscriptions and difficult cancellation processes as a frequent point of contention. From the 5 participants that were interviewed for subscription manager in phase 1 we had 1 participant who forgot to cancel 2 subscriptions and attempted to get their money back, but the bank considered the transactions authorized. The result we found was that relying on memory was not enough. Another participant allowed a small charge from a service that wasn't being used to go on for 2 months simply because the fee was small. An additional participant identified a problem with difficult cancellation processes. The participant was sent to different pages when trying to cancel and received no response by email. Phase 2 strengthened these findings that were seen in phase 1. Our team interviewed 13 more people resulting in an additional finding of small recurring subscription costs are easily overlooked but can add up over time. Multiple interviewees described keeping subscription because charges withing the $2-$10 range did not seem significant at the time. One of the participants described paying for a $5 monthly subscription and leaving it active for around 2 years, resulting in a cost of more than $100 for a service that was not being used. The findings showed us that Subscription Manager may help users better understand what their subscriptions are actually costing them. Rather than showing a monthly price, the app could put costs into perspective over a longer time span. Or equate the costs over time to alternative things they could be putting money towards based off their interests. The app can also help users keep track of upcoming charges and subscriptions they may no longer use.</p>
+
+          <h3>What didn't work/What we pivoted from:</h3>
+          <p>From our interview research we found that our original assumption of people are losing money because they forget about recurring subscriptions/free trials and existing ways of keeping track of them are not always effective. In phase 1, our proposed Subscription Manager was meant to centralize tracking and help with billing and cancellation problems. In phase 2, we pivoted to clarification as to what people were doing to track subscriptions, and why they were allowing financial leaks. The focus shifted from creating an app that lists and tracks subscriptions to addressing the specific problems that were found in our interviews. The focus is now centered on small charges/un-used subscriptions going un-noticed, understanding the costs of subscriptions over time, keeping subscription information in one place, and making it easier to cancel unwanted services.</p>
+        </article>
+
+        <!-- Business Strategy -->
+        <article class="content-card">
+          <h2>Business Strategy</h2>
+          <h3>Strategy-to-project chain: Strategy:</h3>
+          <p>Help everyday subscription consumers eliminate and avoid paying hidden financial waste and take full control of where their money is being sent and consent to those charges and track them to verify long term costs.</p>
+
+          <h3>Objective:</h3>
+          <p>Develop an application that informs the consumer about active subscriptions and projects the cumulative finical impacts. Also informs them about the cancellation process.</p>
+
+          <h3>Justification:</h3>
+          <p>Our research shows that consumers lose money not just from forgotten trials but also from small recurring charges to completely go unnoticed over long periods of time with users wasting over $100 across two years on unused services. Users struggle to cancel unwanted subscriptions as they make it a step-by-step nightmare to cancel.</p>
+
+          <h3>Scope:</h3>
+          <p>The application will display all recurring subscriptions and feature long term cost calculators and provide direct pathways or guidance to bypass cancellation setbacks. We will create this application based on the sprints set by the professor.</p>
+
+          <h3>Target audience:</h3>
+          <p>Our audience priorities would be homeowners who must pay for subscriptions for the whole family/house and are too busy to handle subscriptions on their own or notice small charges being stated in their account.</p>
+
+          <h3>Investors:</h3>
+          <p>For this application, there would not be any specific group of people that would be interested in investing in this application. Banks could be interested in investing to offer better services to their customers as they get frequent calls from unauthorized subscriptions chargers from their customers.</p>
+        </article>
+
+        <!-- Project Charter -->
+        <article class="content-card">
+          <h2>Project Charter</h2>
+          <p><strong>Title:</strong> Subscription Manager</p>
+          <p><strong>Purpose (Why does the project matter to us):</strong><br />
+          People are often faced with unexpected financial leaks from forgotten recurring subscriptions and hidden trial conversions. A subscription manager would provide a centralized solution that stops unwanted billing, cancellation traps and a realizable tracking system.</p>
+
+          <h3>General Project Information</h3>
+          <table class="charter-table">
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Information</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Project Name</td><td>Subscription Manager</td></tr>
+              <tr><td>Project Manager</td><td>TBD</td></tr>
+              <tr><td>Project Sponsor</td><td>TBD</td></tr>
+              <tr><td>Email</td><td>TBD</td></tr>
+              <tr><td>Phone</td><td>TBD</td></tr>
+              <tr><td>Organization</td><td>Team 2</td></tr>
+              <tr><td>Problem</td><td>Consumers may lose funds from the forgotten or unused subscriptions, small recurring charges, and difficult cancellation processes</td></tr>
+              <tr><td>Purpose of Project</td><td>It will provide a centralized way for consumers to track subscriptions</td></tr>
+              <tr><td>Business Case</td><td>Interviews showed that small recurring charges can go unnoticed over time, leading to the users paying for services they don't use anymore.</td></tr>
+              <tr><td>Goals/Metrics</td><td>Help users see active subscriptions, understand cumulative costs, track upcoming charges, and manage the subscriptions that are unwanted.</td></tr>
+              <tr><td>Expected Deliverables</td><td>A subscription manager application that displays recurring subscriptions, calculates long-term costs, and provides cancellation guidance.</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Constraints, Risk, Assumptions</h3>
+          <table class="charter-table">
+            <tbody>
+              <tr><th>Within scope</th><td>Display recurring subscriptions, calculate long-term costs, track upcoming charges, and provide cancellation pathways or guidance.</td></tr>
+              <tr><th>Outside of Scope</th><td>TbD</td></tr>
+              <tr><th>Deferred</th><td>TBD</td></tr>
+              <tr><th>Risk</th><td>Cancellation processes may vary between services, which could make consistent cancellation guidance difficult.</td></tr>
+              <tr><th>Constraints</th><td>Development must follow the sprint schedule given by Dr. Mejia</td></tr>
+              <tr><th>Assumptions</th><td>Users will benefit from seeing their subscriptions, long-term costs, upcoming charges, and cancellation information in one place</td></tr>
+            </tbody>
+          </table>
+
+          <h3>Success criteria</h3>
+          <p></p>
+
+          <h3>PM authority</h3>
+          <p>TbD</p>
+        </article>
+
+        <!-- Individual Accountability & AI Disclosure -->
+        <article class="content-card">
+          <h2>Individual Accountability &amp; AI Disclosure</h2>
+          
+          <h3>Contribution Statement</h3>
+          <ul>
+            <li><strong>Pamela Herrera:</strong> Conducted subscription manager user interviews, website architecture and implementation. Designed the portal including layout, design system, theme, navigation flow, PDF integration and deployment in Vercel. Reviewed project charter baseline for web formatting.</li>
+            <li><strong>Tolstoi Espino:</strong> Conducted user interviews and owns Business Strategy, including the strategy-to-project chain, target audience for Subscription Manager. Reviewed website deliverables integration.</li>
+            <li><strong>Megan Soto:</strong> Conducted thrifting user interviews and owns the Aggregate Findings write-up covering Travel Guides, Document Checklists, Media Finder, and Thrifting, why those ideas did not advance. Reviewed the overall market research findings.</li>
+            <li><strong>Anali Bailey:</strong> Conducted Travel Checklist interviews and owns the Top-Pick Deep Dive on Subscription Manager interview data, plus “What Didn’t Work / What We Pivoted From.” Reviewed the overall market research findings.</li>
+            <li><strong>Frank Bugarin:</strong> Conducted Media Finder interviews and Project Charter, defined scope boundaries (in/out/deferred), constraints, risks, and assumptions. Reviewed business strategy objectives.</li>
+          </ul>
+
+          <h3>AI Use Disclosure</h3>
+          <p>
+            <strong>Pamela Herrera:</strong> GenAI was used accross specific project workflows: Cursor served as the AI agent to build the website while Gemini was used to generate the structured prompt based on the team’s qualitative and quantitative findings from Market Research Phase 1 and 2.
+          </p>
+        </article>
+
+      </div>
+
+      <!-- VISTA 2: VISOR PDF EMBEBIDO -->
+      <div id="pdf-view" class="tab-pane">
+        <div class="pdf-shell">
+          <div class="pdf-shell__bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div class="btn-row">
+              <a class="btn btn--primary btn--sm" href="assets/docs/sprint1-deliverables.pdf" download style="background: #000; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600;">Download PDF</a>
+              <a class="btn btn--ghost btn--sm" href="assets/docs/sprint1-deliverables.pdf" target="_blank" rel="noopener noreferrer" style="border: 1px solid #ccc; padding: 8px 16px; border-radius: 6px; text-decoration: none;">Open in New Tab</a>
+            </div>
+            <span class="pill pill--muted">Official Stamped Record · Sprint 1</span>
+          </div>
+          <iframe
+            src="assets/docs/sprint1-deliverables.pdf"
+            width="100%"
+            height="850"
+            style="border: 1px solid var(--border-color, #e5e7eb); border-radius: 12px;"
+            title="Sprint 1 deliverables PDF"
+          ></iframe>
+          <p class="pdf-fallback" style="margin-top: 1rem; font-size: 0.9rem;">
+            If the PDF does not display directly in your browser,
+            <a href="assets/docs/sprint1-deliverables.pdf" target="_blank" rel="noopener noreferrer">click here to download or open it in a new window</a>.
+          </p>
+        </div>
+      </div>
+
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <span>Team 2 · Subscription Manager · CS 4390/5388 · Dr. Mejia</span>
-      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Repository →</a>
+      <a href="https://github.com/pamelaherrerade/subscription-manager" target="_blank" rel="noopener noreferrer">Repository →</a>
     </div>
   </footer>
+
   <script src="assets/js/main.js"></script>
+  <script>
+    // Alternar pestañas
+    function switchTab(tabId, element) {
+      document.querySelectorAll('.tab-pane').forEach(function(pane) {
+        pane.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      element.classList.add('active');
+    }
+  </script>
 </body>
 </html>
