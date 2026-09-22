@@ -51,18 +51,35 @@
     .tab-pane.active {
       display: block;
     }
+
     .content-card {
-      background: var(--card-bg, #ffffff);
-      border: 1px solid var(--border-color, #e5e7eb);
+      background: #ffffff !important;
+      color: #111827 !important; /* Texto negro */
+      border: 1px solid #e5e7eb !important;
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 2rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       line-height: 1.5;
     }
-    .content-card p {
+
+    .content-card h1,
+    .content-card h2,
+    .content-card h3,
+    .content-card h4,
+    .content-card p,
+    .content-card span,
+    .content-card strong,
+    .content-card li {
+      color: #111827 !important;
       line-height: 1.5;
+    }
+
+    .content-card p {
       margin-bottom: 1.25rem;
+    }
+    .content-card h1 {
+      margin-bottom: 1.5rem;
     }
     .content-card h2 {
       margin-top: 1.5rem;
@@ -77,7 +94,6 @@
       margin-bottom: 0.5rem;
     }
     .content-card ul {
-      line-height: 1.5;
       margin-bottom: 1.25rem;
       padding-left: 1.5rem;
     }
@@ -91,14 +107,17 @@
       margin-bottom: 1.5rem;
       line-height: 1.5;
     }
-    .charter-table th, .charter-table td {
-      border: 1px solid var(--border-color, #e5e7eb);
+    .charter-table th, 
+    .charter-table td {
+      border: 1px solid #e5e7eb !important;
       padding: 10px 14px;
       text-align: left;
       vertical-align: top;
+      color: #111827 !important;
+      background-color: #ffffff !important;
     }
     .charter-table th {
-      background-color: var(--table-header-bg, #f9fafb);
+      background-color: #f9fafb !important;
       width: 35%;
       font-weight: 600;
     }
@@ -141,13 +160,11 @@
     </section>
 
     <section class="section container" style="padding-top: 0;">
-      <!-- Barra de navegación por pestañas -->
       <div class="tab-nav">
         <button type="button" class="tab-btn active" onclick="switchTab('web-view', this)">📖 Web View</button>
         <button type="button" class="tab-btn" onclick="switchTab('pdf-view', this)">📄PDF</button>
       </div>
 
-      <!-- VISTA 1: TEXTO WEB IDÉNTICO AL PDF -->
       <div id="web-view" class="tab-pane active">
         
         <!-- Market Research -->
@@ -269,8 +286,6 @@
         </article>
 
       </div>
-
-      <!-- VISTA 2: VISOR PDF EMBEBIDO -->
       <div id="pdf-view" class="tab-pane">
         <div class="pdf-shell">
           <div class="pdf-shell__bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
@@ -306,7 +321,6 @@
 
   <script src="assets/js/main.js"></script>
   <script>
-    // Alternar pestañas
     function switchTab(tabId, element) {
       document.querySelectorAll('.tab-pane').forEach(function(pane) {
         pane.classList.remove('active');
