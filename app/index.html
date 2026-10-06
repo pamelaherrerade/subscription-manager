@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>unfee — Subscription Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div class="phone-frame" id="app">
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="topbar__brand">
+          <span class="topbar__logo" aria-hidden="true">◎</span>
+          <h1 class="topbar__title">unfee</h1>
+        </div>
+        <button type="button" class="icon-btn" id="btn-add-header" aria-label="Add subscription">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M12 5v14M5 12h14"/>
+          </svg>
+        </button>
+      </header>
+
+      <main class="views">
+        <!-- HOME VIEW -->
+        <section class="view view--active" id="view-home" data-view="home" aria-label="Home">
+          <p class="greeting">Your recurring spend</p>
+
+          <!-- Spending summary -->
+          <article class="summary-card" aria-labelledby="summary-heading">
+            <div class="summary-card__top">
+              <div>
+                <p class="summary-card__label" id="summary-heading">Monthly total</p>
+                <p class="summary-card__amount" id="monthly-total">$0.00</p>
+              </div>
+              <div class="summary-card__badge">
+                <span id="active-count">0</span> active
+              </div>
+            </div>
+            <div class="summary-card__projections">
+              <div class="projection">
+                <span class="projection__label">1-year cost</span>
+                <span class="projection__value" id="year1-total">$0</span>
+              </div>
+              <div class="projection projection--warn">
+                <span class="projection__label">2-year cost</span>
+                <span class="projection__value" id="year2-total">$0</span>
+              </div>
+            </div>
+            <p class="summary-card__hint">Small monthly fees add up — see the long-term impact.</p>
+          </article>
+
+          <!-- Categories -->
+          <div class="section-head">
+            <h2>Categories</h2>
+          </div>
+          <div class="category-scroll" id="category-list" role="tablist" aria-label="Filter by category"></div>
+
+          <!-- Cost view toggle -->
+          <div class="section-head section-head--row">
+            <h2>Subscriptions</h2>
+            <div class="cost-toggle" role="group" aria-label="Cost display mode">
+              <button type="button" class="cost-toggle__btn cost-toggle__btn--active" data-mode="monthly">Monthly</button>
+              <button type="button" class="cost-toggle__btn" data-mode="year2">2-Year</button>
+            </div>
+          </div>
+
+          <ul class="sub-list" id="subscription-list" aria-label="Active subscriptions"></ul>
+        </section>
+
+        <!-- WALLET VIEW -->
+        <section class="view" id="view-wallet" data-view="wallet" aria-label="Wallet" hidden>
+          <p class="greeting">Payment methods</p>
+          <article class="wallet-card">
+            <div class="wallet-card__chip" aria-hidden="true"></div>
+            <p class="wallet-card__label">Primary card</p>
+            <p class="wallet-card__number">•••• •••• •••• 4281</p>
+            <div class="wallet-card__meta">
+              <span>Visa Debit</span>
+              <span>Exp 09/28</span>
+            </div>
+          </article>
+          <div class="info-panel">
+            <h2>Linked charges</h2>
+            <p>Most of your active subscriptions bill this card. Review renewals before they hit.</p>
+            <ul class="linked-list" id="linked-charges"></ul>
+          </div>
+        </section>
+
+        <!-- ANALYTICS VIEW -->
+        <section class="view" id="view-analytics" data-view="analytics" aria-label="Analytics" hidden>
+          <p class="greeting">Spending insights</p>
+          <article class="insight-card">
+            <h2>By category</h2>
+            <div class="bars" id="analytics-bars"></div>
+          </article>
+          <article class="insight-card insight-card--leak">
+            <h2>Financial leak spotlight</h2>
+            <p class="leak-copy" id="leak-copy">Loading…</p>
+            <p class="leak-figure" id="leak-figure"></p>
+          </article>
+        </section>
+
+        <!-- PROFILE VIEW -->
+        <section class="view" id="view-profile" data-view="profile" aria-label="Profile" hidden>
+          <p class="greeting">Your profile</p>
+          <div class="profile-hero">
+            <div class="avatar" aria-hidden="true">PH</div>
+            <div>
+              <h2 class="profile-name">Pamela H.</h2>
+              <p class="profile-meta">Tracking since Jan 2026</p>
+            </div>
+          </div>
+          <ul class="profile-stats">
+            <li>
+              <span class="profile-stats__label">Active</span>
+              <span class="profile-stats__value" id="profile-active">0</span>
+            </li>
+            <li>
+              <span class="profile-stats__label">Cancelled</span>
+              <span class="profile-stats__value" id="profile-cancelled">0</span>
+            </li>
+            <li>
+              <span class="profile-stats__label">Est. saved / yr</span>
+              <span class="profile-stats__value" id="profile-saved">$0</span>
+            </li>
+          </ul>
+          <div class="info-panel">
+            <h2>Why unfee?</h2>
+            <p>Forgotten $2–$10 fees feel small monthly — over 1–2 years they become real waste. We surface long-term cost and clear cancellation steps so dark patterns don’t win.</p>
+          </div>
+        </section>
+      </main>
+
+      <!-- FAB -->
+      <button type="button" class="fab" id="btn-add-fab" aria-label="Add new subscription">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </button>
+
+      <!-- Bottom nav -->
+      <nav class="bottom-nav" aria-label="Main">
+        <button type="button" class="nav-item nav-item--active" data-nav="home" aria-current="page">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z"/></svg>
+          <span>Home</span>
+        </button>
+        <button type="button" class="nav-item" data-nav="wallet">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20M16 14h2"/></svg>
+          <span>Wallet</span>
+        </button>
+        <button type="button" class="nav-item" data-nav="analytics">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M12 19V5M20 19v-7"/></svg>
+          <span>Analytics</span>
+        </button>
+        <button type="button" class="nav-item" data-nav="profile">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 19.5c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg>
+          <span>Profile</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Detail / Cancellation modal -->
+  <div class="modal-backdrop" id="detail-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal__close" id="modal-close" aria-label="Close">×</button>
+      <div class="modal__header">
+        <div class="sub-icon sub-icon--lg" id="modal-icon"></div>
+        <div>
+          <h2 id="modal-title">Service</h2>
+          <p class="modal__category" id="modal-category"></p>
+        </div>
+      </div>
+      <div class="modal__stats">
+        <div>
+          <span class="modal__stat-label">Monthly</span>
+          <span class="modal__stat-value" id="modal-price"></span>
+        </div>
+        <div>
+          <span class="modal__stat-label">Next renewal</span>
+          <span class="modal__stat-value" id="modal-renewal"></span>
+        </div>
+        <div>
+          <span class="modal__stat-label">12-mo spent</span>
+          <span class="modal__stat-value modal__stat-value--warn" id="modal-spent"></span>
+        </div>
+      </div>
+
+      <section class="cancel-guide" aria-labelledby="cancel-guide-title">
+        <h3 id="cancel-guide-title">Cancellation Guide</h3>
+        <p class="cancel-guide__intro">Clear steps — no dark patterns, no maze of menus.</p>
+        <ol class="cancel-guide__steps" id="cancel-steps"></ol>
+        <a class="btn btn--primary" id="cancel-link" href="#" target="_blank" rel="noopener noreferrer">Cancel Service</a>
+        <button type="button" class="btn btn--ghost" id="btn-mark-cancelled">Mark as Cancelled</button>
+      </section>
+    </div>
+  </div>
+
+  <!-- Add subscription modal -->
+  <div class="modal-backdrop" id="add-modal" hidden>
+    <div class="modal modal--form" role="dialog" aria-modal="true" aria-labelledby="add-title">
+      <button type="button" class="modal__close" id="add-close" aria-label="Close">×</button>
+      <h2 id="add-title">Add subscription</h2>
+      <form id="add-form" novalidate>
+        <label class="field">
+          <span>Name</span>
+          <input type="text" name="name" required placeholder="e.g. Disney+" maxlength="40" />
+        </label>
+        <label class="field">
+          <span>Category</span>
+          <select name="category" required>
+            <option value="streaming">OTT / Streaming</option>
+            <option value="music">Music</option>
+            <option value="productivity">Work / Productivity</option>
+            <option value="cloud">Cloud / Storage</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <div class="field-row">
+          <label class="field">
+            <span>Price ($)</span>
+            <input type="number" name="price" required min="0.01" step="0.01" placeholder="9.99" />
+          </label>
+          <label class="field">
+            <span>Billing</span>
+            <select name="frequency" required>
+              <option value="monthly">Monthly</option>
+              <option value="yearly">Yearly</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span>Next due date</span>
+          <input type="date" name="nextDue" required />
+        </label>
+        <button type="submit" class="btn btn--primary btn--block">Add subscription</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
