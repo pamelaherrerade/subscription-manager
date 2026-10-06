@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sprint 2 Deliverables — Team 2 · Subscription Manager</title>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("subease-portal-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .tab-nav {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border-color, #e5e7eb);
+      padding-bottom: 8px;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      cursor: pointer;
+      color: var(--text-muted, #6b7280);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background-color: var(--primary-bg, #000);
+      color: var(--primary-text, #fff);
+    }
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+    .content-card {
+      background: #ffffff !important;
+      color: #111827 !important;
+      border: 1px solid #e5e7eb !important;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      line-height: 1.6;
+    }
+    .content-card h1, .content-card h2, .content-card h3, .content-card h4,
+    .content-card p, .content-card span, .content-card strong, .content-card li {
+      color: #111827 !important;
+    }
+    .content-card p { margin-bottom: 1.25rem; }
+    .content-card h1 { margin-bottom: 1.5rem; }
+    .content-card h2 { margin-top: 1.75rem; margin-bottom: 1rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; }
+    .content-card h3 { margin-top: 1.25rem; margin-bottom: 0.75rem; }
+    .content-card ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .content-card li { margin-bottom: 0.5rem; }
+    
+    .charter-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .charter-table th, 
+    .charter-table td {
+      border: 1px solid #e5e7eb !important;
+      padding: 10px 14px;
+      text-align: left;
+      vertical-align: top;
+      color: #111827 !important;
+      background-color: #ffffff !important;
+    }
+    .charter-table th {
+      background-color: #f9fafb !important;
+      width: 28%;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark" aria-hidden="true">SM</span>
+        <span class="brand__text">
+          <span class="brand__name">Team 2 · Subscription Manager</span>
+          <span class="pill">🟢 Sprint 2 Active</span>
+        </span>
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="sprint1.html">Sprint 1</a>
+        <a href="sprint2.html" class="active">Sprint 2</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <span data-icon="sun" aria-hidden="true">☀️</span>
+          <span data-icon="moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero container">
+      <div class="doc-meta">
+        <span class="pill">🟢 Active</span>
+        <span class="pill pill--muted">Deadline · Oct 5, 11:59 PM</span>
+      </div>
+      <h1>Sprint 2 Deliverables</h1>
+    </section>
+
+    <section class="section container" style="padding-top: 0;">
+      <div class="tab-nav">
+        <button type="button" class="tab-btn active" onclick="switchTab('web-view', this)">📖 Web View</button>
+        <button type="button" class="tab-btn" onclick="switchTab('pdf-view', this)">📄 PDF</button>
+      </div>
+
+      <div id="web-view" class="tab-pane active">
+        <article class="content-card">
+          <h1>Sprint 2 Page</h1>
+
+          <!-- 1. Business Case -->
+          <h2>Business Case</h2>
+          <h3>Executive Summary</h3>
+          <p>
+            The Subscription Manager App addresses the verified market problem of consumer financial leakage caused by forgotten recurring trials, unnoticed small fees ($2–$10/month), and intentionally complex cancellation workflows. Qualitative user research demonstrated recurring losses exceeding $100 across two years for services that remained active.
+          </p>
+          <p>
+            The proposed solution centralizes active recurring charges, provides advance renewal notifications, calculates cumulative multi-year costs, and delivers actionable cancellation pathways. Delivery is planned across a 3-month timeline requiring 495 effort hours (3.00 FTE-Months) at a loaded labor cost of $12,375.00 to $15,000.00. Since interviews confirmed real demand and we can build it within our 3-month timeline using free test environments, we recommend a GO decision.
+          </p>
+
+          <h3>Business Strategy: Strategy-to-Project Chain</h3>
+          <p><strong>Strategy:</strong> Help everyday subscription consumers eliminate and avoid paying hidden financial waste and take full control of where their money is being sent and consent to those charges and track them to verify long term costs.</p>
+          <p><strong>Objective:</strong> Develop an application that informs the consumer about active subscriptions and projects the cumulative financial impacts. Also informs them about the cancellation process.</p>
+          <p><strong>Justification:</strong> Our research shows that consumers lose money not just from forgotten trials but also from small recurring charges to completely go unnoticed over long periods of time with users wasting over $100 across two years on unused services. Users struggle to cancel unwanted subscriptions as they make it a step-by-step nightmare to cancel.</p>
+          <p><strong>Scope:</strong> The application will display all recurring subscriptions and feature long term cost calculators and provide direct pathways or guidance to bypass cancellation setbacks. We will create this application based on the sprints set by the professor.</p>
+          <p><strong>Target audience:</strong> Our audience priorities would be homeowners who must pay for subscriptions for the whole family/house and are too busy to handle subscriptions on their own or notice small charges being stated in their account.</p>
+          <p><strong>Investors:</strong> For this application, there would not be any specific group of people that would be interested in investing in this application. Banks could be interested in investing to offer better services to their customers as they get frequent calls from unauthorized subscriptions chargers from their customers.</p>
+
+          <!-- 2. Estimation Appendix -->
+          <h2>Estimation Appendix</h2>
+          <p>
+            The team focused on one core piece of the app: <strong>“Recurring Charge Detection &amp; Notification Setup”</strong>. This slice covers transaction records, spotting recurring charges, and notifying the user with an alert before the next renewal date.
+          </p>
+          <h3>Estimation Methods</h3>
+          <p>The slice was estimated using two independent approaches:</p>
+          <ul>
+            <li><strong>1. Function Points:</strong> Counted the screens, inputs, outputs, files, and queries needed to make the slice work, totaling 44 function points. Based on an assumed benchmark range of 6 to 12 hours per point, this method estimated between 264 and 528 team hours (44 × 6h = 264h low, 44 × 12h = 528h high).</li>
+            <li><strong>2. Use-Case Points:</strong> Analyzing actors, user steps, and technical complexity factors yielded 30 use-case points. At a standard rate of 20 hours per point, this method estimated 600 team hours (30 × 20h = 600h).</li>
+          </ul>
+          <p>
+            Function points gave us a middle value of 352 hours, while use-case points resulted in 240 hours, creating an estimation gap of about 1.5 (352 ÷ 240 = 1.467). With roughly a 100-hour difference, the two estimates are reasonably close, and because they rely on completely different starting assumptions, their general agreement is meaningful. The difference between both estimates comes down to scope perspective: function points focus strictly on counting discrete inputs, screens, and stored data, while use-case points look at the full user journey and factor in real-world friction like team coordination, setup, and testing edge cases.
+          </p>
+          <p>
+            With 264 hours on the low end and 600 hours on the high end, the team established a baseline target of 495 project hours across the team with an estimated 1.8 to 4 weeks to complete this core slice, fitting neatly into the 3-month total development plan. Total labor cost is set at $12,375 without overhead, and up to $15,000 loaded at a $25/hour rate, remaining strictly within the budget range.
+          </p>
+
+          <!-- 3. ROI Analysis -->
+          <h2>ROI Analysis</h2>
+          <p>
+            The initial investment to develop the application is estimated at $12,375 for direct labor (495 hours at $25/hour) and up to $15,000 when accounting for tooling overhead, with zero infrastructure costs during Release 1 by relying on free hosting. In return, user interviews revealed that consumers routinely lose over $100 over two years on small, forgotten subscriptions in the $2 to $10 range. By proactively notifying users before renewal dates and providing clear merchant cancellation paths, the app helps an active user eliminate between $50 and $120 each year in unwanted recurring fees. Because the project focuses on stopping consumer financial waste rather than charging subscription fees directly, we evaluate return on investment through a cost-avoidance breakeven model (Total Project Cost divided by Average Annual User Savings). At an expected savings of $60 per user each year, dividing our $15,000 loaded cost by $60 shows that just 250 active users recover enough lost money in Year 1 to balance out our entire development expense. Continuing into Year 2, those same 250 users generate $30,000 in cumulative savings without new development costs, delivering a 100% net ROI and demonstrating that the app provides measurable economic value with very little financial risk.
+          </p>
+
+          <!-- 4. Change Log -->
+          <h2>Change Log</h2>
+          <table class="charter-table">
+            <thead>
+              <tr>
+                <th style="width: 25%;">Area</th>
+                <th>Sprint 2 Updates &amp; Justification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Version &amp; Date</strong></td>
+                <td>Version 2.0.0 · October 5, 2026</td>
+              </tr>
+              <tr>
+                <td><strong>Business Strategy &amp; Scope</strong></td>
+                <td>Bounded development scope to a 3-month timeline centered on "Recurring Charge Detection &amp; Notification Setup" following market demand evidence.</td>
+              </tr>
+              <tr>
+                <td><strong>Estimation Baseline</strong></td>
+                <td>Integrated dual-method estimation (44 Function Points vs. 30 Use-Case Points; 264h–600h range) with a calculated 1.47 gap factor.</td>
+              </tr>
+              <tr>
+                <td><strong>Financial Budget</strong></td>
+                <td>Formally locked labor costs at $12,375 (495 hours at $25/hr) and up to $15,000 loaded, leveraging free cloud sandboxes for $0 infrastructure cost.</td>
+              </tr>
+              <tr>
+                <td><strong>ROI &amp; Feasibility</strong></td>
+                <td>Added breakeven model (250 users recover $15,000 in Year 1) and projected 100% net ROI in Year 2.</td>
+              </tr>
+              <tr>
+                <td><strong>Executive Decision</strong></td>
+                <td>Issued a formal GO decision recommendation based on verified demand and technical schedule feasibility.</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+
+      <!-- Tab PDF View -->
+      <div id="pdf-view" class="tab-pane">
+        <div class="pdf-shell">
+          <div class="pdf-shell__bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <div class="btn-row">
+              <a class="btn btn--primary btn--sm" href="assets/docs/Sprint2_VOct5.pdf" download style="background: #000; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600;">Download PDF</a>
+              <a class="btn btn--ghost btn--sm" href="assets/docs/Sprint2_VOct5.pdf" target="_blank" rel="noopener noreferrer" style="border: 1px solid #ccc; padding: 8px 16px; border-radius: 6px; text-decoration: none;">Open in New Tab</a>
+            </div>
+            <span class="pill pill--muted">Official Record · Sprint 2</span>
+          </div>
+          <iframe
+            src="assets/docs/Sprint2_VOct5.pdf"
+            width="100%"
+            height="850"
+            style="border: 1px solid var(--border-color, #e5e7eb); border-radius: 12px;"
+            title="Sprint 2 deliverables PDF"
+          ></iframe>
+          <p class="pdf-fallback" style="margin-top: 1rem; font-size: 0.9rem;">
+            If the PDF does not display directly in your browser,
+            <a href="assets/docs/Sprint2_VOct5.pdf" target="_blank" rel="noopener noreferrer">click here to download or open it in a new window</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span>Team 2 · Subscription Manager · CS 4390/5388 · Dr. Mejia</span>
+      <a href="https://github.com/pamelaherrerade/subscription-manager" target="_blank" rel="noopener noreferrer">Repository →</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function switchTab(tabId, element) {
+      document.querySelectorAll('.tab-pane').forEach(function(pane) {
+        pane.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+      element.classList.add('active');
+    }
+  </script>
+</body>
+</html>

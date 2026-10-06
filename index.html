@@ -22,6 +22,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    /* Estilos para soportar múltiples tarjetas de sprints en el roadmap */
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -30,16 +39,17 @@
         <span class="brand__mark" aria-hidden="true">SM</span>
         <span class="brand__text">
           <span class="brand__name">Team 2 · Subscription Manager</span>
-          <span class="pill">🟢 Sprint 1 Active</span>
+          <span class="pill">🟢 Sprint 2 Active</span>
         </span>
       </a>
       <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About Us</a>
         <a href="sprint1.html">Sprint 1</a>
+        <a href="sprint2.html">Sprint 2</a>
       </nav>
       <div class="header-actions">
         <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
@@ -58,55 +68,76 @@
         Consumers lose money on forgotten recurring subscriptions and quiet small charges that add up—because monthly fees feel too minor to notice until years of waste pile up.
       </p>
       <div class="hero__actions">
-        <a class="btn btn--primary" href="sprint1.html">View Sprint 1 Deliverables →</a>
-        <a class="btn btn--ghost" href="about.html">About Us</a>
+        <a class="btn btn--primary" href="sprint2.html">View Sprint 2 Deliverables →</a>
+        <a class="btn btn--ghost" href="sprint1.html">View Sprint 1 Record</a>
       </div>
     </section>
 
+    <!-- Sprint Status Dashboard -->
     <section class="section container" aria-labelledby="dash-title">
-
+      <div class="card-grid">
         <article class="card">
           <p class="card__label">Sprint status</p>
-          <h3 class="card__title">Sprint 1 — Market Research, Strategy &amp; Charter</h3>
+          <h3 class="card__title">Sprint 2 — Business Case, Estimation &amp; ROI</h3>
           <div class="status-list">
             <div class="status-row">
               <span>Status</span>
-              <span class="pill">🟢 In Progress</span>
+              <span class="pill">🟢 Active</span>
             </div>
             <div class="status-row">
               <span>Deadline</span>
-              <strong>Sept 21, 11:59 PM</strong>
+              <strong>Oct 5, 11:59 PM</strong>
             </div>
             <div class="status-row">
               <span>Instructor</span>
               <strong>Dr. Mejia</strong>
             </div>
           </div>
-          <a class="btn btn--primary btn--sm" href="sprint1.html">View Sprint 1 Deliverables →</a>
+          <a class="btn btn--primary btn--sm" href="sprint2.html">View Sprint 2 Deliverables →</a>
         </article>
       </div>
     </section>
 
+    <!-- Sprint Roadmap -->
     <section class="section container" style="padding-top: 0;" aria-labelledby="roadmap-title">
       <p class="section__eyebrow">Roadmap</p>
       <h2 class="section__title" id="roadmap-title">Sprint roadmap</h2>
 
-      <div class="roadmap--single">
-        <article class="card roadmap-card is-active roadmap-card--featured">
+      <div class="roadmap-grid">
+        <!-- Sprint 1: Completed -->
+        <article class="card roadmap-card">
           <div class="roadmap-card__top">
-            <span class="card__label" style="margin:0;">Current phase</span>
-            <span class="pill">🟢 Active</span>
+            <span class="card__label" style="margin:0;">Phase 1</span>
+            <span class="pill pill--muted">⚪ Completed</span>
           </div>
           <h3>Sprint 1</h3>
           <p class="card__body">
-            Market Research, Business Strategy, and Project Charter are consolidated in the Sprint 1 deliverables PDF.
+            Market Research, Business Strategy, and Project Charter consolidated into the Sprint 1 release baseline.
           </p>
           <div class="tags" style="margin-top:1rem;">
             <span class="tag tag--lilac">Market Research</span>
             <span class="tag tag--peach">Strategy</span>
             <span class="tag tag--cyan">Charter</span>
           </div>
-          <a class="btn btn--primary btn--sm" href="sprint1.html" style="margin-top:1.15rem;">Open Sprint 1 Document →</a>
+          <a class="btn btn--ghost btn--sm" href="sprint1.html" style="margin-top:1.15rem;">Open Sprint 1 Document →</a>
+        </article>
+
+        <!-- Sprint 2: Active -->
+        <article class="card roadmap-card is-active roadmap-card--featured">
+          <div class="roadmap-card__top">
+            <span class="card__label" style="margin:0;">Current phase</span>
+            <span class="pill">🟢 Active</span>
+          </div>
+          <h3>Sprint 2</h3>
+          <p class="card__body">
+            Formal Business Case, dual-method Project Estimation (FP &amp; UCP), Budget baseline, and consumer ROI analysis.
+          </p>
+          <div class="tags" style="margin-top:1rem;">
+            <span class="tag tag--peach">Business Case</span>
+            <span class="tag tag--cyan">Estimation</span>
+            <span class="tag tag--lilac">ROI Analysis</span>
+          </div>
+          <a class="btn btn--primary btn--sm" href="sprint2.html" style="margin-top:1.15rem;">Open Sprint 2 Document →</a>
         </article>
       </div>
     </section>
